@@ -1,0 +1,57 @@
+.btn-file { position: relative; overflow: hidden; margin-right: 4px; padding: 10px 80px; }
+.btn-file input { position: absolute; top: 0; right: 0; margin: 0; opacity: 0; filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4); font-size: 23px; direction: ltr; cursor: pointer; }
+
+
+.navbar-fixed-bottom {margin-bottom: 10px}
+.btn-file {
+    font-size: 18px;
+}
+.btn-folder {
+    padding: 40px 40px;
+    background: url("/ico/folder.png") no-repeat left top;
+    border-color: black;
+    border-width: 0px;
+}
+
+.btn-folder:hover {
+    background: url("/ico/folder.png") no-repeat left top;
+}
+
+.btn-photo {
+    padding: 40px 40px;
+    background: url("/ico/camera.png") no-repeat left top;
+    border-color: black;
+    border-width: 0px;
+}
+
+.btn-photo:hover {
+    background: url("/ico/camera.png") no-repeat left top;
+}
+body {
+    margin-bottom: 0px;
+
+}
+bd {
+    background: #000000;
+}
+.dashboard {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    background-color: #000000;
+}
+.dashboard img  {
+    border: 3px solid black; /* Рамка вокруг фотографии */
+    padding: 0px; /* Расстояние от картинки до рамки */
+    margin-right: 0px; /* Отступ справа */
+    margin-bottom: 0px; /* Отступ снизу */
+    width: 33.33%;
+}
+.col-xs-3    {
+     padding-right: 1px;
+     padding-left: 1px;
+}
+.navbar-fixed-bottom {
+    margin-bottom: 5px;
+}
