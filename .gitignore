@@ -1,0 +1,7 @@
+*~
+makefile
+uploads/*
+images/*
+phpinfo.php
+test*
+.idea
