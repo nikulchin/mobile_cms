@@ -14,7 +14,7 @@ class Controller_Auth extends Controller_Template {
 
     }
 
-    public function action_index()
+    public function action_google()
     {
 
         $client_id = '62701041915-id05msd2pgu9omtcmn5rphhgb9f46sna.apps.googleusercontent.com'; // Client ID

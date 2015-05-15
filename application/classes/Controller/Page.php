@@ -16,7 +16,11 @@ class Controller_Page extends Controller_Template {
 
     public function action_index()
     {
-        $this->response->body('hello, world!');
+
+        $content = View::factory('/pages/about');
+        //$this->template->title = 'О сайте';
+        // $this->template->description = 'Страница о сайте';
+        $this->template->content = $content;
     }
 
 
