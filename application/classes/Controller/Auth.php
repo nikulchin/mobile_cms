@@ -19,7 +19,7 @@ class Controller_Auth extends Controller_Template {
 
         $client_id = '62701041915-id05msd2pgu9omtcmn5rphhgb9f46sna.apps.googleusercontent.com'; // Client ID
         $client_secret = '-8vpblQWTe3R9ysPSzNTAOKC'; // Client secret
-        $redirect_uri = 'http://m.sharein.ru/oauth2callback'; // Redirect URI
+        $redirect_uri = 'http://m.sharein.ru/auth/google'; // Redirect URI
 
         $url = 'https://accounts.google.com/o/oauth2/auth';
 
