@@ -6,17 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo isset($page_title)? $page_title : 'NULL'; ?></title>
 
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="/css/contextMenu.css" rel="stylesheet">
-
-    <link href="/css/styles.css" rel="stylesheet">
-
-    <link href="/css/bootstrap-social.css" rel="stylesheet" media="screen, projection">
-    <link href="/css/font-awesome.css" rel="stylesheet">
-
-
+    <?php foreach($styles as $style): ?>
+        <link href="<?php echo URL::base(); ?>css/<?php echo $style; ?>.css" rel="stylesheet" type="text/css" />
+    <?php endforeach; ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,5 +21,10 @@
 <div class="container">
 <?php echo $content; ?>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<?php foreach($scripts as $script): ?><script src="<?php echo URL::base(); ?>js/<?php echo $script; ?>.js"/>
+<?php endforeach; ?>
+
 </body>
 </html>

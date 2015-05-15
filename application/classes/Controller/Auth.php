@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Auth extends Controller_Template {
+class Controller_Auth extends Controller_Common {
 
     // Определяем шаблон по умолчанию
     //public $template = 'main';
@@ -64,7 +64,8 @@ class Controller_Auth extends Controller_Template {
 
 
                 if ($result) {
-                    $_SESSION['username'] = 'google' . $userInfo['id'];
+                    //$_SESSION['username'] = 'google' . $userInfo['id'];
+                    $session->set('username', 'google'.$userInfo['id']);
                     //  register($_SESSION['username']);
                     $this->template->content = "Социальный ID пользователя: " . $userInfo['id'] . '<br />'.
                         "Имя пользователя: " . $userInfo['name'] . '<br />'.

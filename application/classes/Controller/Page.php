@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Page extends Controller_Template {
+class Controller_Page extends Controller_Common {
 
     // Определяем шаблон по умолчанию
     //public $template = 'main';
