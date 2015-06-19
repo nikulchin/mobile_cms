@@ -2,6 +2,8 @@
 makefile
 uploads/*
 images/*
+images
+ico
 phpinfo.php
 test*
 .idea

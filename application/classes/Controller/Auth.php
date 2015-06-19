@@ -82,6 +82,14 @@ class Controller_Auth extends Controller_Common {
         //$this->template->content = $content;
 
     }
+    public function action_twitter(){
+        $content = View::factory('/pages/underConstruction');
+        $this->template->content = $content;
+    }
+    public function action_facebook(){
+        $content = View::factory('/pages/underConstruction');
+        $this->template->content = $content;
+    }
 
 
 }

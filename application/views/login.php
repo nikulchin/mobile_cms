@@ -8,6 +8,18 @@
 
             </a>
         </div>
+        <div class="social-box">
+            <a class="btn btn-block btn-social btn-facebook btn-lg" href="<?=$facebook_href?>">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
+
+            </a>
+        </div>
+        <div class="social-box">
+            <a class="btn btn-block btn-social btn-twitter btn-lg" href="<?=$twitter_href?>">
+                <i class="fa fa-twitter"></i> Sign in with Twitter
+
+            </a>
+        </div>
 
     </div>
 </div>
