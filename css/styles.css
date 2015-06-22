@@ -13,10 +13,7 @@
     border-color: black;
     border-width: 0px;
 }
-.row {
-     margin-right: 0px;
-     margin-left: 0px;
-}
+
 .btn-folder:hover {
     background: url("/ico/folder.png") no-repeat left top;
 }
@@ -47,10 +44,9 @@ bd {
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 3px;
-    background-color: #000000;
 }
 .dashboard img  {
-    border: 3px solid black; /* Рамка вокруг фотографии */
+    border: 3px solid white; /* Рамка вокруг фотографии */
     padding: 0px; /* Расстояние от картинки до рамки */
     margin-right: 0px; /* Отступ справа */
     margin-bottom: 0px; /* Отступ снизу */

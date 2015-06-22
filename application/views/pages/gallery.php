@@ -5,7 +5,6 @@
  * Date: 6/19/15
  * Time: 3:57 PM
  */?>
-<div class="fill">
     <div class="row">
         <div class="col-xs-12" style="padding-left: 0px;padding-right: 0px">
             <div class="dashboard" id="img-dashboard"><?php foreach($images as $image): ?><a href="<?=URL::base().$image['path']; ?>"><img src="<?=URL::base().$image['thumbnail']?>" id="<?=$image['id']?>" alt="<?=$image['label']?>"></a><?php endforeach; ?><a href="images/a6/1c/a61cd5dab648b600eeac620324ca7ca8.1907530.jpg" style="display:none"><img src="" id="215" alt="Фотография 1"></a></div>
@@ -31,5 +30,4 @@
         </div>
         <div class="col-xs-3"></div>
     </div>
-</div>
 </div>
