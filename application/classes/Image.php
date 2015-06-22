@@ -81,10 +81,10 @@ class Image
         $session = Session::instance();
         $conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
         $sql = "SELECT `id`, `path`,`thumbnail`, `label`, UNIX_TIMESTAMP(`publicationDate`) AS publicationDate FROM " . IMAGES_CLASS_VIEW_EXT .
-                " WHERE `id` = :id ";//and `login` =: login";
+                " WHERE `id` = :id  and `login` =: login";
         $st = $conn->prepare($sql);
         $st->bindValue(":id", $id, PDO::PARAM_INT);
-        //$st->bindValue(":login", $_SESSION["username"], PDO::PARAM_STR);
+        $st->bindValue(":login", $_SESSION["username"], PDO::PARAM_STR);
         $st->execute();
         $row = $st->fetch();
         $conn = null;

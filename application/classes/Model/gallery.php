@@ -10,7 +10,7 @@ defined('SYSPATH') or die('No direct script access.');
 
 class Model_Gallery extends Model
 {
-    protected $_tableImages = 'IMAGE_VIEW_V3';
+    protected $_tableImages = 'V_IMAGES_ACTIVE';
 
     /**
      * Get all articles
@@ -18,7 +18,8 @@ class Model_Gallery extends Model
      */
     public function get_all()
     {
-        $sql = "SELECT * FROM ". $this->_tableImages." ORDER BY id DESC";
+        $session = Session::instance();
+        $sql = "SELECT * FROM ". $this->_tableImages." WHERE userId = ".$session->get("userId")." ORDER BY id DESC";
 
         return DB::query(Database::SELECT, $sql)
             ->execute();
