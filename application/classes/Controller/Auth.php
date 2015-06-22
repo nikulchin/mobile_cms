@@ -111,11 +111,11 @@ class Controller_Auth extends Controller {
     }
     public function action_twitter(){
         $content = View::factory('/pages/underConstruction');
-        $this->template->content = $content;
+        $this->response->body($content);
     }
     public function action_facebook(){
         $content = View::factory('/pages/underConstruction');
-        $this->template->content = $content;
+        $this->response->body($content);
     }
 
 
