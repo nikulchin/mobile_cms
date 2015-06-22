@@ -13,7 +13,10 @@
     border-color: black;
     border-width: 0px;
 }
-
+.row {
+     margin-right: 0px;
+     margin-left: 0px;
+}
 .btn-folder:hover {
     background: url("/ico/folder.png") no-repeat left top;
 }
@@ -28,9 +31,14 @@
 .btn-photo:hover {
     background: url("/ico/camera.png") no-repeat left top;
 }
+
 body {
     margin-bottom: 0px;
 
+}
+.fill {
+    height: 600px;
+    background-color: black;
 }
 bd {
     background: #000000;

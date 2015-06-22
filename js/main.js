@@ -82,7 +82,7 @@ $(function() {
             console.log("PHP Output:");
             console.log( data );
             console.log(data.path);
-            var f = $('.dashboard').children().first().clone();
+            var f = $('.dashboard').children().last().clone();
             f.attr("href",data.path);
             f.show();
             var img = f.children().first();
@@ -114,7 +114,7 @@ $(function() {
                 var f = $('.dashboard').children().first().clone();
                 f.attr("href",data.path);
                 f.show();
-                var img = f.children().first();
+                var img = f.children().last();
                 img.attr("src",data.thumbnail);
                 img.attr("id",data.imageId);
                 $('.dashboard').prepend(f);
