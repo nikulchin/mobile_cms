@@ -4,11 +4,11 @@ define( "DB_USERNAME", "gallery_cms" );
 define( "DB_PASSWORD", "!hw8eKKXc*x&" );
 define("USERS_TABLE", "users");
 
-class Controller_Auth extends Controller_Common {
+class Controller_Auth extends Controller {
 
     // Определяем шаблон по умолчанию
     //public $template = 'main';
-
+    public $session;
     public function action_about()
     {
         $content = View::factory('/pages/about');
@@ -42,7 +42,7 @@ class Controller_Auth extends Controller_Common {
 
     public function action_google()
     {
-
+        $this->session = Session::instance();
         $client_id = '62701041915-id05msd2pgu9omtcmn5rphhgb9f46sna.apps.googleusercontent.com'; // Client ID
         $client_secret = '-8vpblQWTe3R9ysPSzNTAOKC'; // Client secret
         $redirect_uri = 'http://m.sharein.ru/auth/google'; // Redirect URI
@@ -93,14 +93,14 @@ class Controller_Auth extends Controller_Common {
                     //$_SESSION['username'] = 'google' . $userInfo['id'];
                     $this->session->set('username', 'google'.$userInfo['id']);
                     $this->register($_SESSION['username']);
-                    $this->template->content = "Социальный ID пользователя: " . $userInfo['id'] . '<br />'.
+                    $this->redirect('/');
+                    /*$this->template->content = "Социальный ID пользователя: " . $userInfo['id'] . '<br />'.
                         "Сессия пользователя: " . $this->session->get('username')  . '<br />'.
                         "Имя пользователя: " . $userInfo['name'] . '<br />'.
                         "Email: " . $userInfo['email'] . '<br />'.
                         "Ссылка на профиль пользователя: " . $userInfo['link'] . '<br />'.
                         "Пол пользователя: " . $userInfo['gender'] . '<br />'.
-                        '<img src="' . $userInfo['picture'] . '" />'."<br />";
-                    // header("location: /");
+                        '<img src="' . $userInfo['picture'] . '" />'."<br />";*/
                 }
 
             }
