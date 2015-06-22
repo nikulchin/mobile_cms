@@ -14,15 +14,15 @@ var menu = [{
         target.parentNode.onclick = function () {
             target.src = src;
             $.ajax({
-                url: "ajax.php?action=undelete&imageId=" + id,
+                url: "ajax/undelete/" + id,
                 type: "GET"
             });
             return false;
         };
 
         $.ajax({
-            url: "ajax.php?action=delete&imageId=" + id,
-            type: "GET",
+            url: "ajax/delete/" + id,
+            type: "GET"
         });
 
         setTimeout(function () {
@@ -71,7 +71,7 @@ $(function() {
         console.log(form_name);
         fd.append("label", "WEBUPLOAD");
         $.ajax({
-            url: "ajax.php?action=upload",
+            url: "ajax/upload",
             type: "POST",
             data: fd,
             enctype: 'multipart/form-data',
@@ -84,6 +84,7 @@ $(function() {
             console.log(data.path);
             var f = $('.dashboard').children().first().clone();
             f.attr("href",data.path);
+            f.show();
             var img = f.children().first();
             img.attr("src",data.thumbnail);
             img.attr("id",data.imageId);
@@ -100,7 +101,7 @@ $(function() {
                 fd.append('fileToUpload',file);
                 fd.append("label", "WEBUPLOAD");
             $.ajax({
-                url: "ajax.php?action=upload",
+                url: "ajax/upload",
                 type: "POST",
                 data: fd,
                 enctype: 'multipart/form-data',
@@ -112,6 +113,7 @@ $(function() {
                 console.log( data );
                 var f = $('.dashboard').children().first().clone();
                 f.attr("href",data.path);
+                f.show();
                 var img = f.children().first();
                 img.attr("src",data.thumbnail);
                 img.attr("id",data.imageId);

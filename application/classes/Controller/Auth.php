@@ -1,4 +1,8 @@
 <?php defined('SYSPATH') or die('No direct script access.');
+define( "DB_DSN", "mysql:host=localhost;dbname=gallery" );
+define( "DB_USERNAME", "gallery_cms" );
+define( "DB_PASSWORD", "!hw8eKKXc*x&" );
+define("USERS_TABLE", "users");
 
 class Controller_Auth extends Controller_Common {
 
@@ -12,6 +16,28 @@ class Controller_Auth extends Controller_Common {
         // $this->template->description = 'Страница о сайте';
         $this->template->content = $content;
 
+    }
+    protected function register($login)
+    {
+        $conn = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+        $time = time();
+        $st = $conn->prepare("SELECT SQL_CALC_FOUND_ROWS id from  " . USERS_TABLE . " WHERE login = :login limit 1");
+        $st->bindValue(":login", $login, PDO::PARAM_STR);
+        $st->execute();
+
+        if ($row = $st->fetch()) {
+            $_SESSION['userId'] = $row['id'];
+        }
+        else {
+            $st = $conn->prepare("INSERT INTO users set `login` = :login");
+            $st->bindValue(":login", $login, PDO::PARAM_STR);
+            $st->execute();
+
+            $_SESSION['userId'] = $conn->lastInsertId();
+        }
+
+
+        $conn = null;
     }
 
     public function action_google()
@@ -66,8 +92,9 @@ class Controller_Auth extends Controller_Common {
                 if ($result) {
                     //$_SESSION['username'] = 'google' . $userInfo['id'];
                     $this->session->set('username', 'google'.$userInfo['id']);
-                    //  register($_SESSION['username']);
+                    $this->register($_SESSION['username']);
                     $this->template->content = "Социальный ID пользователя: " . $userInfo['id'] . '<br />'.
+                        "Сессия пользователя: " . $this->session->get('username')  . '<br />'.
                         "Имя пользователя: " . $userInfo['name'] . '<br />'.
                         "Email: " . $userInfo['email'] . '<br />'.
                         "Ссылка на профиль пользователя: " . $userInfo['link'] . '<br />'.

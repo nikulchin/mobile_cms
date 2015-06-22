@@ -18,10 +18,17 @@ class Model_Gallery extends Model
      */
     public function get_all()
     {
-        $sql = "SELECT * FROM ". $this->_tableImages;
+        $sql = "SELECT * FROM ". $this->_tableImages." ORDER BY id DESC";
 
         return DB::query(Database::SELECT, $sql)
             ->execute();
     }
+    public function add($path, $thumbnail,$publicationDate)
+    {
+        return DB::insert('images', array('path', 'thumbnail','publicationDate'))
+            ->values(array($path, $thumbnail,$publicationDate))
+            ->execute();
+    }
+
 }
 ?>
